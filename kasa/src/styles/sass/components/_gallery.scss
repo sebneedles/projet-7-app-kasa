@@ -1,0 +1,150 @@
+$desktop: 380px;
+//$mobile: 768px;
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: $desktop) {
+      @content;
+		}
+	}
+}
+
+.gallery {
+	margin: 43px auto;
+	display: flex;
+	justify-content: center;
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		max-width: 1240px;
+		background-color: $colour-grey-light;
+		border-radius: 25px;
+
+		.card {
+			width: 340px;
+			height: 340px;
+			margin-top: 56px;
+			background-color: $colour-primary;
+			overflow: hidden;
+			border-radius: 10px;
+		
+			&:hover {
+				.card__caption {
+					top: 75%;
+					transform: translateY(0%);
+				}
+		
+				.card__image {
+					transform: scale(1.1);
+				}
+		
+				.card__thumb {
+					&::after {
+						top: 0;
+						background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 96, 96 , 1) 100%);
+						transition: .3s;
+					}
+				}
+		
+				.card__snippet {
+					margin: 20px 0;
+				}
+			}
+		
+			&__thumb {
+				position: relative;
+				max-height: 340px;
+				overflow: hidden;
+				margin-block-start: unset;
+				margin-block-end: unset;
+				margin-inline-start: unset;
+				margin-inline-end: unset;
+				border-radius: 10px;
+				
+				@include breakpoint(desktop) {
+					max-height: 340px;
+				}
+		
+				&::after {
+					position: absolute;
+					top: 0;
+					display: block;
+					content: '';
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+					transition: .3s;
+					
+					@include breakpoint(desktop) {
+						top: calc(100% - 140px);
+					}
+				}
+			}
+			
+			&__image {
+				transition: .5s ease-in-out;
+				width: 340px;
+				height: 340px;
+				object-fit: cover;
+			}
+			
+			&__caption {
+				position: absolute;
+				top: 75%;
+				z-index: 1;
+				padding: 0 20px;
+				color: $colour-title-primary;
+				transform: translateY(0%);
+				text-align: left;
+				transition: 0.3s;
+		
+				@include breakpoint(desktop) {
+					top: calc(100% - 80px);
+					transform: unset;
+				}
+			}
+		
+			&__title {
+				display: -webkit-box;
+				max-height: 85px;
+				overflow: hidden;
+				@extend .card-typo;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				max-width: 300px;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+	.gallery {
+		margin-top: 20px;
+		display: block;
+		justify-content: unset;
+
+		.container {
+			max-width: 768px;
+			background-color: unset;
+			border-radius: unset;
+
+			.card {
+				margin-top: 5px;
+				margin-bottom: 20px;
+				width: 100%;
+				max-width: 768px;
+				height: 100%;
+				max-height: 768px;
+
+				.card__image {
+					width: 768px;
+					height: unset;
+				}
+			}
+		}
+	}
+}

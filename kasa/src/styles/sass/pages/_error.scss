@@ -1,0 +1,53 @@
+.error-element {
+    margin: 100px auto;
+
+    .title-error {
+        font-size: 288px;
+        text-align: center;
+        font-weight: 700;
+        color: $colour-primary;
+        line-height: 120%;
+    }
+
+    .title-error-messsage {
+        color: $colour-primary;
+        font-size: 36px;
+        line-height: 142%;
+        text-align: center;
+        font-weight: 300;
+    }
+
+    .link-error {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        text-align: center;
+        color: $colour-primary;
+        display: flex;
+        justify-content: center;
+        margin-top: 20vh;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .error-element {
+        .title-error {
+            font-size: 96px;
+            line-height: 136px;
+        }
+        .title-error-messsage {
+            font-size: 18px;
+            line-height: 25px;
+            width: 100%;
+            max-width: 260px;
+            margin: 0 auto;
+        }
+        .link-error {
+            font-size: 14px;
+            line-height: 19px;
+            font-weight: 300;
+        }
+    }
+    
+}

@@ -1,12 +1,11 @@
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../../assets/fonts/Montserrat-Regular.ttf);
+html {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
 }
 
-h1{
+h1, h2, h3, h4, p {
     font-family: 'Montserrat', sans-serif;
-}
-p{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-weight: 500;
 }

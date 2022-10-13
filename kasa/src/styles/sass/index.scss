@@ -1,3 +1,14 @@
+// Reglages de base
 @import "./settings";
+
+// Import des composants
 @import "./components/variables";
 @import "./components/navigation";
+@import "./components/banner";
+@import "./components/gallery";
+@import "./components/footer";
+@import "./components/collapse";
+
+// Import des pages
+@import "./pages/error";
+@import "./pages/lodging";

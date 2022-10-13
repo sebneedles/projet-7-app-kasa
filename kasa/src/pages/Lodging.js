@@ -1,12 +1,35 @@
-import React from 'react';
-import Navigation from '../components/Navigation';
+import React,  {useEffect, useState } from 'react';
+import axios from 'axios';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const Lodging = () => {
+
+    const [data, setData] = useState([]);
+
+    // Le useEffect se joue lorque le composant est monté
+    useEffect(() => {
+        axios.get('../logements.json')
+        .then((res) => setData(res.data));
+    }, []);
+    
+
+
     return (
         <div>
-            <Navigation />
-            <h1>Votre logement</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam consequuntur cupiditate, unde aliquid minima modi inventore, incidunt molestias quaerat debitis laboriosam? Fugit soluta nesciunt perferendis obcaecati modi eius ipsa libero? Magnam cumque vel modi, molestias cum incidunt consectetur ex hic? Error architecto explicabo labore neque consequuntur distinctio necessitatibus commodi nulla totam, doloremque voluptates fugiat obcaecati optio ex nesciunt dolorum earum aliquam omnis enim quidem officiis vel quam! Alias, non corporis natus numquam aspernatur nihil explicabo, delectus maiores eum saepe ullam? Asperiores iure aut qui ipsa fuga quo aliquam, cumque totam voluptatum voluptates in recusandae nesciunt, rerum accusamus inventore dolor.</p>
+            <Header />
+            <section className='lodging'>
+                
+                 {/* Tu me retournes cet élément mappé */}
+                {data.map((logement, index) => (
+                    // Ici je test si ça retourne bien ce que je veux
+                    <ul className='ma-liste' key={index}>
+                        <li>1</li>
+                    </ul>
+                ))}
+
+            </section>
+            <Footer />
         </div>
     );
 };

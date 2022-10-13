@@ -1,0 +1,14 @@
+.lodging {
+    display: flex;
+    justify-content: center;
+    max-width: 1240px;
+    width: 100%;
+
+    ul{
+        display: flex;
+
+        .ma-liste{
+            list-style-type: none;
+        }
+    }
+}
