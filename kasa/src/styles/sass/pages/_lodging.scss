@@ -1,14 +1,15 @@
 .lodging {
-    display: flex;
-    justify-content: center;
     max-width: 1240px;
     width: 100%;
+    margin: 25px auto;
+}
 
-    ul{
-        display: flex;
-
-        .ma-liste{
-            list-style-type: none;
-        }
-    }
+.message {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: $colour-primary;
 }

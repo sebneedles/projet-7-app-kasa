@@ -29,10 +29,12 @@
                     font-size: 24px;
                     line-height: 34px;
                     color: $colour-title-primary;
+                    font-weight: 400;
                 }
             
                 span {
                     color: $colour-title-primary;
+                    font-size: 24px;
                 }
             }
 
@@ -40,18 +42,20 @@
                 color: $colour-primary;
                 max-height: 0;
                 overflow: hidden;
-                transition: all .5s cubic-bezier(0,1,0,1);
+                transition: all 0.5s cubic-bezier(0.39, 0.66, 0.02, 0.79);
+                opacity: 0;
             }
 
             .show {
                 height: auto;
                 max-height: 500px;
-                transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+                transition: all 0.5s cubic-bezier(0.39, 0.66, 0.02, 0.79);
                 padding: 20px 18px;
                 font-size: 24px;
                 font-weight: lighter;
                 font-family: 'Monstserrat', sans-serif;
                 line-height: 34px;
+                opacity: 1;
             }
         }
     }
@@ -71,7 +75,7 @@
                         line-height: 18px;
                     }
                     span {
-
+                        font-size: 15px;
                     }
                 }
                 .content {

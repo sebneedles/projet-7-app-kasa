@@ -21,7 +21,7 @@ const Collapse = () => {
                         <div className='item' key={i}>
                             <div className='title' onClick={() => toggle(i)}>
                                 <h2>{item.question}</h2>
-                                <span>{selected === i ? <i class="fa-solid fa-chevron-up"></i> : <i class="fa-solid fa-chevron-down"></i>}</span>
+                                <span>{selected === i ? <i className="fa-solid fa-chevron-up"></i> : <i className="fa-solid fa-chevron-down"></i>}</span>
                             </div>
                             <div className={selected === i ? 'content show' : 'content'}>{item.answer}</div>
                         </div>

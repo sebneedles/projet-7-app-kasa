@@ -1,0 +1,157 @@
+.infos__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    &-wrapper {
+        display: block;
+        max-height: 200px;
+        max-width: 582px;
+        width: 100%;
+        margin: 12px 0;
+
+        .accordion {
+            .item {
+                background-color: $colour-grey-light;
+                border-radius: 0px 0px 10px 10px;
+
+                .title {
+                    padding: 0 10px;
+                    background-color: $colour-primary;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    height: 47px;
+
+                    h2 {
+                        font-size: 18px;
+                        line-height: 25px;
+                        color: $colour-title-primary;
+                        font-weight: 400;
+                    }
+
+                    span {
+                        color: $colour-title-primary;
+                        font-size: 24px;
+                    }
+                }
+
+                .item-list {
+                    color: $colour-primary;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: all 0.5s cubic-bezier(0.39, 0.66, 0.02, 0.79);
+                    margin-block-end: unset;
+                    margin-block-start: unset;
+                    opacity: 0;
+
+                    ul {
+                        list-style-type: none;
+                        margin-block-start: unset;
+                        padding: 20px 10px;
+                        max-height: 301px;
+                        height: 100%;
+                        li {
+                            font-size: 18px;
+                            line-height: 25px;
+                            color: $colour-primary;
+                            font-weight: 300;
+                        }
+                    }
+                }
+                .show-list {
+                    background-color: $colour-grey-light;
+                    height: auto;
+                    max-height: 301px;
+                    transition: all 0.5s cubic-bezier(0.39, 0.66, 0.02, 0.79);
+                    font-size: 18px;
+                    font-weight: lighter;
+                    line-height: 25px;
+                    border-radius: 0px 0px 10px 10px;
+                    opacity: 1;
+                }
+
+                .content {
+                    color: $colour-primary;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: all 0.5s cubic-bezier(0.39, 0.66, 0.02, 0.79);
+                    margin-block-end: unset;
+                    margin-block-start: unset;
+                    opacity: 0;
+                }
+
+                .show {
+                    background-color: $colour-grey-light;
+                    height: auto;
+                    max-height: 301px;
+                    transition: all 0.5s cubic-bezier(0.39, 0.66, 0.02, 0.79);
+                    padding: 20px 18px 20px 12px;
+                    font-size: 18px;
+                    font-weight: lighter;
+                    line-height: 25px;
+                    border-radius: 0px 0px 10px 10px;
+                    opacity: 1;
+                    padding: 29px 10px;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width:768px) {
+    .infos__bottom {
+        justify-content: unset;
+        flex-direction: column;
+        margin-top: 9px;
+
+        &-wrapper {
+            max-width: 768px;
+            
+            .accordion {
+                .item {
+                    .title {
+                        height: 30px;
+
+                        h2 {
+                            font-size: 13px;
+                            line-height: 18px;
+                        }
+                        span {
+                            font-size: 15px;
+                        }
+                    }
+
+                    .item-list{
+                        ul {
+                            padding: 17px 10px;
+
+                            li {
+                                font-size: 12px;
+                                line-height: 17px;
+                            }
+                        }
+                    }
+
+                    .show-list {
+
+                    }
+
+                    .content {
+
+                    }
+
+                    .show {
+                        font-size: 12px;
+                        line-height: 17px;
+                        padding: 17px 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -16,51 +16,74 @@
         width: 100%;
         opacity: 0.7;
     }
-    
+
     .title-center {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    
+    
 }
 
 
 
 @media screen and (max-width: 768px) {
-    .banner {
+
+    .kasa-img {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background-color: #000000;
+        max-width: 768px;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        max-height: 111px;
         margin-top: 20px;
 
-        .kasa-img {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            background-color: #000000;
-            max-width: 1240px;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-        
-            img {
-                object-fit: cover;
-                opacity: 0.7;
-            }
-    
-            h1 {
-                font-size: 24px;
-                text-align: left;
-                margin-left: 16px;
-                max-width: 217px;
-                line-height: 24px;
-    
-                .title-center {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-            } 
+        img {
+            max-height: 111px;
         }
+
+        .title-center {
+            font-size: 24px;
+            line-height: 24px;
+            max-width: 360px;
+            text-align: center;
+        } 
     }
     
+}
+
+@media screen and (max-width: 425px) {
+    .kasa-img {
+        .title-center {
+            font-size: 24px;
+            left: 33%;
+            line-height: 24px;
+            max-width: 220px;
+            text-align: left;
+        }
+    } 
+    
+}
+
+
+@media screen and (max-width: 375px) {
+    .kasa-img {
+        .title-center {
+            left: 36%;
+        }
+    } 
+}
+
+
+@media screen and (max-width: 320px) {
+    .kasa-img {
+        .title-center {
+            left: 42%;
+        }
+    } 
 }

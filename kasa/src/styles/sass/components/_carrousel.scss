@@ -1,0 +1,64 @@
+.carrousel {
+    width: 100%;
+    max-width: 1240px;
+    position: relative ;
+    
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        height: 415px;
+        border-radius: 25px;
+    }
+
+    .arrow__left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        left: 23px;
+        cursor: pointer;
+    }
+
+    .arrow__right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        right: 23px;
+        cursor: pointer;
+    }
+
+    &__indicators {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        color: $colour-title-primary;
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .carrousel {
+        max-width: 768px;
+        max-height: 255px;
+
+        &__img {
+            width: 100%;
+            object-fit: cover;
+            max-height: 255px;
+            border-radius: 25px;
+        }
+
+        .arrow__left {
+            width: 12px;
+        }
+    
+        .arrow__right {
+            width: 12px;
+        }
+
+        &__indicators {
+            display: none;
+        }
+    }
+}
