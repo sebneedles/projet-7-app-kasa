@@ -1,56 +1,75 @@
 import React, {useState} from 'react';
+import arrowUp from '../assets/images/arrow.png';
+import arrowDown from '../assets/images/arrow.png';
 
-const Collapse = () => {
+const Collapse = (props) => {
 
-    const [selected, setSelected] = useState(null)
+    const title = props.title;
+    const answer = props.answer;
 
-    const toggle = (i) => {
-        if (selected === i) {
-            return setSelected(null)
+    const [open, setOpen] = useState(false);
+
+    const toggle = (index) => {
+        if (open === index) {
+            return setOpen(null)
         }
+        setOpen(index)
+    };
 
-        setSelected(i)
-    }
+    
 
     return (
-        <section>
-            <div className='wrapper'>
-                <div className='accordion'>
+        <div className='accordion'>
+          <div className='accordion__arrow' onClick={() => toggle(answer)}>
+            <div className="accordion__arrow-bg"></div>
 
-                    {data.map((item, i) => (
-                        <div className='item' key={i}>
-                            <div className='title' onClick={() => toggle(i)}>
-                                <h2>{item.question}</h2>
-                                <span>{selected === i ? <i className="fa-solid fa-chevron-up"></i> : <i className="fa-solid fa-chevron-down"></i>}</span>
-                            </div>
-                            <div className={selected === i ? 'content show' : 'content'}>{item.answer}</div>
-                        </div>
-                    ))}
+            {title === 'Description' ? (<h2 className='min'>{title}</h2>) : (<h2>{title}</h2>) 
+            && 
+            title === 'Equipements' ? (<h2 className='min'>{title}</h2>) : (<h2>{title}</h2>)}
 
-                </div>
+            {/* <h2>{title}</h2> */}
+            
+              {/* Changer le sens de la flèche quand le contenu est ouvert ou fermé */}
+              {open === answer ? (
+                <img className='accordion__arrow-up' src={arrowUp} alt='Flèche vers le haut' />
+              ) : (
+                <img className='accordion__arrow-down' src={arrowDown} alt='Flèche vers le bas' />
+              )}
+            
+          </div>
+          {/* Si le titre est "Equipements", le contenu sera une liste sinon le contenu sera du texte
+           */}
+          {open === answer ? (
+            title === 'Equipements' ? (
+              
+                    <div className='text__collapse'>
+                        <ul>
+                            {answer.map((item, index) => (
+                            <li key={item + index}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                
+            ) : (
+              <div className='text__collapse'>
+                <p>{answer}</p>
             </div>
-        </section>
-        
-    );
+            )
+            &&
+            title === 'Description' ? (
+              
+                <div className='text__collapse'>
+                    <p className='min'>{answer}</p>
+                </div>
+            
+        ) : (
+          <div className='text__collapse'>
+            <p>{answer}</p>
+        </div>
+        )
+          ) : null}
+        </div>
+      );
 };
-
-const data = [
-    {
-        question: 'Fiabilité',
-        answer: 'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.'
-    },
-    {
-        question: 'Respect',
-        answer: 'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.'
-    },
-    {
-        question: 'Service',
-        answer: 'Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N\'hésitez pas à nous contacter si vous avez la moindre question.'
-    },
-    {
-        question: 'Sécurité',
-        answer: 'La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l\'hôte qu\'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.' 
-    }
-]
 
 export default Collapse;

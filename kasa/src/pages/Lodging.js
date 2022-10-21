@@ -1,8 +1,7 @@
 import React,  {useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import Caracteristiques from '../components/Caracteristiques';
 import Carrousel from '../components/Carrousel';
-import Description from '../components/Description';
+import Collapse from '../components/Collapse';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -63,8 +62,16 @@ const Lodging = () => {
 
                     {/* Infos Bottom */}
                     <div className="infos__bottom">
-                        <Description description={lodging.description} />
-                        <Caracteristiques equipments={lodging.equipments} />
+                        <div className="part__left">
+                            <div className="wrapper">
+                                <Collapse title="Description" answer={lodging.description} />
+                            </div>
+                        </div>
+                       <div className="part__right">
+                        <div className="wrapper">
+                                <Collapse title="Equipements" answer={lodging.equipments} />
+                            </div>
+                       </div>  
                     </div>
                 </section>
             )}

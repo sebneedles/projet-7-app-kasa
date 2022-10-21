@@ -33,7 +33,7 @@ header {
           @extend .nav-typo;
 
           &:hover {
-            color: $colour-grey-dark;
+            color: darken($colour-primary, 1);
           }
         }
       }
