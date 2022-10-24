@@ -138,11 +138,12 @@ $desktop: 320px;
 				width: 100%;
 				max-width: 768px;
 				height: 100%;
-				max-height: 768px;
+				max-height: 255px;
 
 				.card__image {
-					width: 768px;
-					height: unset;
+					max-width: 768px;
+					height: 255px;
+					width: 100%;
 				}
 			}
 		}
